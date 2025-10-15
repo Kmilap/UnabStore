@@ -39,10 +39,6 @@ class MainActivity : ComponentActivity() {
                     HomeScreen()
                 }
             }
-
-            }
-
+        }
     }
-
-
 }
