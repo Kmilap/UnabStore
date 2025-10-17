@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "802111405339",
+    "project_id": "loginfirebase-fbef9",
+    "storage_bucket": "loginfirebase-fbef9.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:802111405339:android:fa87d51b1fa441cc77e7be",
+        "android_client_info": {
+          "package_name": "me.camilanino.unabstore"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD7kBKvWFRqC5dkH4Rs0yuw5rqJU1ySTcc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
