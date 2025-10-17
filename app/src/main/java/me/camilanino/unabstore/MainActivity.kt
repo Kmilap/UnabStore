@@ -32,6 +32,10 @@ class MainActivity : ComponentActivity() {
                     composable (route = "Login") {
                         LoginScreen(onClickRegister = {
                             navController.navigate("register")
+                        }, onSuccessfulLogin = {
+                            navController.navigate("home"){
+                                popUpTo("Login"){inclusive=true}
+                            }
                         }
                         )
                     }
