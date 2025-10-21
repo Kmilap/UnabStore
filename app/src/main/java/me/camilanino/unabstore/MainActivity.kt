@@ -14,7 +14,11 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import com.google.firebase.Firebase
+import com.google.firebase.auth.auth
+
 import me.camilanino.unabstore.ui.theme.UnabStoreTheme
+
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -23,7 +27,14 @@ class MainActivity : ComponentActivity() {
         setContent {
             UnabStoreTheme {
                 val navController = rememberNavController()
-                val startDestination = "Login"
+                var startDestination = "Login"
+                val auth = Firebase.auth
+                val currentUser = auth.currentUser
+                if (currentUser != null ){
+                    startDestination = "home"
+                }else{
+                    startDestination = "login"
+                }
                 NavHost(
                     navController = navController,
                     startDestination = startDestination,
@@ -53,7 +64,13 @@ class MainActivity : ComponentActivity() {
                         )
                     }
                     composable (route = "home") {
-                        HomeScreen()
+                        HomeScreen(onClickLogout ={
+
+                            navController.navigate("login"){
+                                popUpTo(0)
+                            }
+
+                        })
                     }
                 }
 
